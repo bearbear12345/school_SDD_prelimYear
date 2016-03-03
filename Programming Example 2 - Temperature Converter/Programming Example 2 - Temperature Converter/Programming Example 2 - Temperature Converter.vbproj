@@ -67,10 +67,6 @@
     <ApplicationIcon>shebang.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.WindowsAPICodePack, Version=1.0.0.0, Culture=neutral, PublicKeyToken=90ba9c70f846762e, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\assets\progress bar\Microsoft.WindowsAPICodePack.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.WindowsAPICodePack.Shell">
       <HintPath>..\..\..\..\assets\progress bar\Microsoft.WindowsAPICodePack.Shell.dll</HintPath>
       <Private>True</Private>
@@ -99,6 +95,7 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationEvents.vb" />
     <Compile Include="appMain.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -146,6 +143,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\Microsoft.WindowsAPICodePack.dll" />
+    <None Include="Resources\Microsoft.WindowsAPICodePack.Shell.dll" />
     <Content Include="shebang.ico" />
   </ItemGroup>
   <ItemGroup>
