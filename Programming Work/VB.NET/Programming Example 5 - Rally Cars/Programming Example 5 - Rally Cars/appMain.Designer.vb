@@ -181,6 +181,7 @@ Partial Class appMain
         Me.Controls.Add(Me.picRedCar)
         Me.Controls.Add(Me.picGreenCar)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
+        Me.MinimumSize = New System.Drawing.Size(493, 275)
         Me.Name = "appMain"
         Me.Text = "Rally Cars"
         CType(Me.picGreenCar, System.ComponentModel.ISupportInitialize).EndInit()
