@@ -30,13 +30,14 @@ Partial Class appMain
         Me.lblCount = New System.Windows.Forms.Label()
         Me.btnClear = New System.Windows.Forms.Button()
         Me.txtEntry = New System.Windows.Forms.TextBox()
+        Me.lblWordCount = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'queryQuit
         '
         Me.queryQuit.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.queryQuit.AutoSize = True
-        Me.queryQuit.Location = New System.Drawing.Point(276, 179)
+        Me.queryQuit.Location = New System.Drawing.Point(274, 218)
         Me.queryQuit.Name = "queryQuit"
         Me.queryQuit.Size = New System.Drawing.Size(51, 17)
         Me.queryQuit.TabIndex = 0
@@ -61,18 +62,19 @@ Partial Class appMain
         '
         Me.lblCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.lblCount.AutoSize = True
+        Me.lblCount.BackColor = System.Drawing.Color.Transparent
         Me.lblCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
-        Me.lblCount.Location = New System.Drawing.Point(15, 207)
+        Me.lblCount.Location = New System.Drawing.Point(97, 245)
         Me.lblCount.Name = "lblCount"
-        Me.lblCount.Size = New System.Drawing.Size(99, 17)
+        Me.lblCount.Size = New System.Drawing.Size(16, 17)
         Me.lblCount.TabIndex = 2
-        Me.lblCount.Text = "Word Count: 0"
+        Me.lblCount.Text = "0"
         Me.lblCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'btnClear
         '
         Me.btnClear.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.btnClear.Location = New System.Drawing.Point(18, 175)
+        Me.btnClear.Location = New System.Drawing.Point(18, 219)
         Me.btnClear.Name = "btnClear"
         Me.btnClear.Size = New System.Drawing.Size(75, 23)
         Me.btnClear.TabIndex = 4
@@ -83,30 +85,45 @@ Partial Class appMain
         '
         Me.txtEntry.AcceptsTab = True
         Me.txtEntry.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.txtEntry.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
         Me.txtEntry.Location = New System.Drawing.Point(15, 25)
+        Me.txtEntry.MaxLength = 999999999
         Me.txtEntry.Multiline = True
         Me.txtEntry.Name = "txtEntry"
         Me.txtEntry.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.txtEntry.Size = New System.Drawing.Size(312, 144)
+        Me.txtEntry.Size = New System.Drawing.Size(312, 188)
         Me.txtEntry.TabIndex = 0
+        '
+        'lblWordCount
+        '
+        Me.lblWordCount.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.lblWordCount.AutoSize = True
+        Me.lblWordCount.BackColor = System.Drawing.Color.Transparent
+        Me.lblWordCount.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.lblWordCount.Location = New System.Drawing.Point(15, 245)
+        Me.lblWordCount.Name = "lblWordCount"
+        Me.lblWordCount.Size = New System.Drawing.Size(87, 17)
+        Me.lblWordCount.TabIndex = 5
+        Me.lblWordCount.Text = "Word Count:"
+        Me.lblWordCount.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'appMain
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(342, 241)
+        Me.ClientSize = New System.Drawing.Size(342, 272)
         Me.ControlBox = False
+        Me.Controls.Add(Me.lblCount)
+        Me.Controls.Add(Me.lblWordCount)
         Me.Controls.Add(Me.txtEntry)
         Me.Controls.Add(Me.btnClear)
-        Me.Controls.Add(Me.lblCount)
         Me.Controls.Add(Me.lblInfoText)
         Me.Controls.Add(Me.queryQuit)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.MaximizeBox = False
-        Me.MinimumSize = New System.Drawing.Size(358, 279)
+        Me.MinimumSize = New System.Drawing.Size(358, 288)
         Me.Name = "appMain"
         Me.Opacity = 0.95R
         Me.Text = "Word Count"
@@ -120,5 +137,5 @@ Partial Class appMain
     Friend WithEvents lblCount As System.Windows.Forms.Label
     Friend WithEvents btnClear As System.Windows.Forms.Button
     Friend WithEvents txtEntry As System.Windows.Forms.TextBox
-
+    Friend WithEvents lblWordCount As Label
 End Class
