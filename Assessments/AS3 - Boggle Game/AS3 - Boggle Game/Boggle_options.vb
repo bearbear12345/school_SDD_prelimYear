@@ -1,4 +1,5 @@
 ﻿Public Class Boggle_options
+    ' Game time
     Const TimeUnlimited As String = "No timer (unlimited)"
     Const TimeThirtySecond As String = "30 seconds"
     Const TimeOneMinute As String = "1 minute"
@@ -8,11 +9,13 @@
     Const TimeFiveMinute As String = "5 minutes"
 
     Private Sub Options_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        ' Reset (so we don't get duplicated) and add time options
         ctrlTime.Items.Clear()
         ctrlTime.Items.AddRange({TimeUnlimited, TimeThirtySecond, TimeOneMinute, TimeOneHalfMinute, TimeTwoMinute, TimeThreeMinute, TimeFiveMinute})
-        ctrlTime.Text = TimeThreeMinute
+        ctrlTime.Text = TimeThreeMinute ' Default option
     End Sub
 
+    ' Convert selected time option into seconds
     Private Function ResolveTime()
         Dim selector As String = ctrlTime.SelectedItem.ToString()
         Select Case selector
@@ -26,8 +29,8 @@
     End Function
     Private Sub OKButton_Click(sender As System.Object, e As System.EventArgs) Handles btnOK.Click
         Boggle.GameTime = resolveTime()
-        Boggle.GameState = 3
-        Boggle.ButtonEvent()
+        Boggle.GameState = 3 ' Immitate game reset
+        Boggle.ButtonEvent() ' Immitate game reset
         Me.Close()
     End Sub
 

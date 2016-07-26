@@ -31,6 +31,7 @@ G:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Ga
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.exe
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.pdb
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.xml
+H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbprojResolveAssemblyReference.cache
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Boggle.resources
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Boggle_about.resources
 H:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Resources.resources

@@ -133,5 +133,156 @@ abscissae
   Looks up a localized resource of type System.Byte[].
 </summary>
 </member>
+<member name="F:BoggleGame.Boggle.GameState">
+ <summary>
+ Game states to change the function of the interface button
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.MenuExitButton">
+ <summary>
+ Exit game from dropdown menu item
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.MenuOptionsButton">
+ <summary>
+ Open Options window
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.MenuHelpButton">
+ <summary>
+ Open About/Help window
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.animation_initialise">
+ <summary>
+ Add frames into frame list
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.animationTick">
+ <summary>
+ Change animation frame each interval
+ Call from timer function
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.animation_step">
+ <summary>
+ Cycle through frames
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.animation_painter(System.Collections.Generic.List{System.String})">
+ <summary>
+ 'Paints' the frame onto the grid
+ </summary>
+ <param name="matrix">List of 16 string elements containing text</param>
+</member>
+<member name="M:BoggleGame.Boggle.ShowScore">
+ <summary>
+ Displays a popup of the player's score
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.InitialiseGame">
+ <summary>
+ Reset game
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.StartGame">
+ <summary>
+ Start the game
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.StopGame">
+ <summary>
+ Stop the game
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.ButtonEvent">
+ <summary>
+ Multi-function button effect, that changes function according to the game state
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.Shuffle">
+ <summary>
+ Shake the board!
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.UserInput(System.Object,System.Windows.Forms.KeyPressEventArgs)">
+ <summary>
+ Keyboard listener
+ We're intercepting the keypress event BEFORE the new key is shown in the text box
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.AppLoad(System.Object,System.EventArgs)">
+ <summary>
+ Initialise application interface
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.AppQuit(System.Object,System.Windows.Forms.FormClosingEventArgs)">
+ <summary>
+ Intercept application quit event
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.SetGameState(System.Int32)">
+ <summary>
+ Utility function to universally change the game state
+ State 1 - waiting for new game
+ State 2 - ingame
+ State 3 - finished
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.CountWord(System.Object)">
+ <summary>
+ Calculates the word's point value
+ </summary>
+ <param name="word">word</param>
+ <returns>Integer</returns>
+</member>
+<member name="M:BoggleGame.Boggle.GetGridLocations(System.Char)">
+ <summary>
+ Finds grid locations of input character
+ </summary>
+ <param name="ch">Character to find grid locations for</param>
+ <returns>List of labels (grid locations)</returns>
+</member>
+<member name="M:BoggleGame.Boggle.GetSurroundingLocations(System.Windows.Forms.Label)">
+ <summary>
+ Returns locations surrounding a particular grid location (hard coded)
+ </summary>
+ <param name="loc">Grid location</param>
+ <returns></returns>
+</member>
+<member name="M:BoggleGame.Boggle.WordLoop(System.Int32,System.Collections.Generic.List{System.Char},System.Windows.Forms.Label,System.Collections.Generic.List{System.Windows.Forms.Label})">
+ <summary>
+ Self-executing function to validate if a word is on the grid
+ The function calls itself for each path it can take - To get the word BEAR, there might be two Es around the B, and only one E might have a surrounding A.
+ </summary>
+ <param name="i">Current position through word</param>
+ <param name="word">List of sequential individual characters of a word</param>
+ <param name="previous">Previous grid location</param>
+ <param name="exclude">Grid locations to skip</param>
+</member>
+<member name="M:BoggleGame.Boggle.HandleWord(System.String)">
+ <summary>
+ Handle word received from word input
+ </summary>
+ <param name="word">lowercase word</param>
+</member>
+<member name="M:BoggleGame.Boggle.CalculateMaxScore">
+ <summary>
+ (Function called by thread)
+ Calculate the highest possible score of the given gameboard by trying to validate each word in the lexicon
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.shuffleTimerTick">
+ <summary>
+ Shuffle effect
+ Call from timer function
+ </summary>
+</member>
+<member name="M:BoggleGame.Boggle.GameTimerTick">
+ <summary>
+ Countdown timer
+ Call from timer function
+ </summary>
+</member>
 </members>
 </doc>
