@@ -247,7 +247,7 @@ Public Class Boggle
 
         If locationsmatch.Count = 0 Then
             Return False
-        ElseIf i + 1 = word.Count Or i + 1 = 16 Then
+        ElseIf i + 1 = word.Count Then
             Return True
         End If
 
@@ -259,7 +259,7 @@ Public Class Boggle
 
     End Function
     Public Function ValidateWord(word As String)
-        If word.Length < 3 Then Return False
+        If word.Length < 3 or word.Length > 16 Then Return False
         word = word.Replace("qu", "q")
         Dim wordSplit As List(Of Char) = word.ToCharArray().ToList()
         If wordSplit.Any(Function(letter) GetGridLocations(letter).Count = 0) Then Return False
