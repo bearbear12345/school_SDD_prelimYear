@@ -61,6 +61,26 @@ Namespace My.Resources
         End Property
         
         '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Icon similar to (Icon).
+        '''</summary>
+        Friend ReadOnly Property boggle_icon() As System.Drawing.Icon
+            Get
+                Dim obj As Object = ResourceManager.GetObject("boggle_icon", resourceCulture)
+                Return CType(obj,System.Drawing.Icon)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property boggle_textmark() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("boggle_textmark", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
         '''  Looks up a localized string similar to DO WHAT THE F*CK YOU WANT TO PUBLIC LICENSE
         '''                    Version 2, December 2004
         '''
@@ -78,6 +98,88 @@ Namespace My.Resources
         Friend ReadOnly Property COPYING() As String
             Get
                 Return ResourceManager.GetString("COPYING", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        '''</summary>
+        Friend ReadOnly Property ding() As System.IO.UnmanagedMemoryStream
+            Get
+                Return ResourceManager.GetStream("ding", resourceCulture)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized string similar to aback
+        '''abacus
+        '''abalone
+        '''abandon
+        '''abase
+        '''abash
+        '''abate
+        '''abater
+        '''abbas
+        '''abbe
+        '''abbey
+        '''abbot
+        '''abbreviate
+        '''abc
+        '''abdicate
+        '''abdomen
+        '''abdominal
+        '''abduct
+        '''abed
+        '''aberrant
+        '''aberrate
+        '''abet
+        '''abetted
+        '''abetting
+        '''abeyance
+        '''abeyant
+        '''abhorred
+        '''abhorrent
+        '''abide
+        '''abject
+        '''ablate
+        '''ablaze
+        '''able
+        '''ablution
+        '''abnormal
+        '''aboard
+        '''abode
+        '''abolish
+        '''abolition
+        '''abominable
+        '''abominate
+        '''aboriginal
+        '''aborigine
+        '''aborning
+        '''abort
+        '''abound
+        '''about
+        '''above
+        '''aboveboard
+        '''aboveground
+        '''abovementioned
+        '''abrade
+        '''abrasion
+        '''abrasive
+        '''abreact
+        '''abreast
+        '''abridge
+        '''abridgment
+        '''abroad
+        '''abrogate
+        '''abrupt
+        '''abscess
+        '''abscissa
+        '''abscissae
+        ''' [rest of string was truncated]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property lexicon() As String
+            Get
+                Return ResourceManager.GetString("lexicon", resourceCulture)
             End Get
         End Property
         

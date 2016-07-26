@@ -8,10 +8,10 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("Boggle")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
-<Assembly: AssemblyProduct("BoggleGame")>
+<Assembly: AssemblyTitle(".NET Boggle")> 
+<Assembly: AssemblyDescription("A word finding game against time!")> 
+<Assembly: AssemblyCompany("navhaxs.au.eu.org")> 
+<Assembly: AssemblyProduct(".NET Boggle")>
 <Assembly: AssemblyCopyright("WTFPL")>
 <Assembly: AssemblyTrademark("")> 
 
