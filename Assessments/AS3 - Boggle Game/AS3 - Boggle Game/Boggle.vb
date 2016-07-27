@@ -2,7 +2,13 @@
 Imports System.Media
 Imports Microsoft.WindowsAPICodePack.Taskbar
 
+''' <summary>
+''' .NET Boggle Game by Andrew Wong (11SOF1)
+''' Software Design Development Assessment Task 3 (2016)
+''' http://github.com/bearbear12345/school_SDD_prelimYear
+''' </summary>
 Public Class Boggle
+
 #Region "Settings"
     Public GameTime As Integer = 10 ' Default game time (in seconds)
     ReadOnly _dieFaces() As String = New String() { ' Collection of 16 dice faces
