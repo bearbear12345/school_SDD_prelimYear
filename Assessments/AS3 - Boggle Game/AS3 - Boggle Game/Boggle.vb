@@ -10,7 +10,7 @@ Imports Microsoft.WindowsAPICodePack.Taskbar
 Public Class Boggle
 
 #Region "Settings"
-    Public GameTime As Integer = 10 ' Default game time (in seconds)
+    Public GameTime As Integer = 180 ' Default game time (in seconds)
     ReadOnly _dieFaces() As String = New String() { ' Collection of 16 dice faces
         "ACDEMP",
         "EGKLUY",
@@ -31,13 +31,15 @@ Public Class Boggle
     }
 #End Region
 
+
 #Region "User Interface"
 #Region "UI Functions"
+
     ''' <summary>
     ''' Game states to change the function of the interface button
     ''' </summary>
-    Public GameState As Integer = 1
-    Public Sub UpdateButton()
+    Private GameState As Integer = 1
+    Private Sub UpdateButton()
         Select Case GameState
             Case 1 ' Visible when game is reset
                 btnMulti.Text = "Play"
@@ -47,18 +49,21 @@ Public Class Boggle
                 btnMulti.Text = "Reset"
         End Select
     End Sub
+
     ''' <summary>
     ''' Exit game from dropdown menu item
     ''' </summary>
     Private Sub MenuExitButton() Handles menuGame_exit.Click
         Application.Exit()
     End Sub
+
     ''' <summary>
     ''' Open Options window
     ''' </summary>
     Private Sub MenuOptionsButton() Handles menuGame_options.Click
         Boggle_options.ShowDialog()
     End Sub
+
     ''' <summary>
     ''' Open About/Help window
     ''' </summary>
@@ -76,8 +81,10 @@ Public Class Boggle
     ' \||/
     '  \/
     ' 
+
     Dim _animationI As Integer = 0 ' Frame position
     Dim _animationFrames = New List(Of List(Of String)) ' List of lists containing a matrix of characters to show
+
     ''' <summary>
     ''' Add frames into frame list
     ''' </summary>
@@ -91,6 +98,7 @@ Public Class Boggle
         _animationFrames.Add(New List(Of String)({"", "", "", "", "", "", "", "", "", "|", "|", "", "", "|", "|", ""}))
         _animationFrames.Add(New List(Of String)({"", "", "", "", "", "", "", "", "", "", "", "", "", "|", "|", ""}))
     End Sub
+
     ''' <summary>
     ''' Change animation frame each interval
     ''' Call from timer function
@@ -98,6 +106,7 @@ Public Class Boggle
     Private Sub animationTick() Handles animation.Tick
         animation_step()
     End Sub
+
     ''' <summary>
     ''' Cycle through frames
     ''' </summary>
@@ -108,6 +117,7 @@ Public Class Boggle
             _animationI = 0 ' Set frame position to 0 if the last frame has been reached
         End If
     End Sub
+
     ''' <summary>
     ''' 'Paints' the frame onto the grid
     ''' </summary>
@@ -119,15 +129,17 @@ Public Class Boggle
             i += 1
         Next
     End Sub
+
 #End Region
 #End Region
+
 #Region "Dice"
 #Region "Game Functions"
     Dim _wordList As New List(Of String) ' List containing words that the player enters
     ''' <summary>
     ''' Displays a popup of the player's score
     ''' </summary>
-    Public Sub ShowScore()
+    Private Sub ShowScore()
         Dim score = 0
         For Each word In _wordList
             score += CountWord(word) ' Iterate through the user's word list, and add up each word's value
@@ -138,7 +150,7 @@ Public Class Boggle
     ''' <summary>
     ''' Reset game
     ''' </summary>
-    Public Sub InitialiseGame()
+    Private Sub InitialiseGame()
 
         txtMaxScore.Visible = False ' Hide the max score notice
         txtMaxScore.Text = "Max Score: Calculating..." ' Reset default text
@@ -151,7 +163,7 @@ Public Class Boggle
     ''' <summary>
     ''' Start the game
     ''' </summary>
-    Public Sub StartGame()
+    Private Sub StartGame()
         txtMaxScore.Visible = True ' Show the max score notice
         Dim maxScoreThread As New System.Threading.Thread(AddressOf CalculateMaxScore) ' Create threading object to calculate the maximum score in the background
         maxScoreThread.Start() ' Start the max score calculation
@@ -164,10 +176,11 @@ Public Class Boggle
             GameTimer.Start() ' Start countdown timer
         End If
     End Sub
+
     ''' <summary>
     ''' Stop the game
     ''' </summary>
-    Public Sub StopGame()
+    Private Sub StopGame()
         shuffleTimer.Stop() ' Stop shuffle effect
         GameTimer.Stop() ' Stop countdown timer
         TaskbarManager.Instance.SetProgressValue(1, 1) ' Make taskbar progress bar completely full
@@ -176,6 +189,7 @@ Public Class Boggle
         txtInput.Enabled = False ' Disable word input
         lblTime.Visible = False ' Hide the countdown time
     End Sub
+
     ''' <summary>
     ''' Multi-function button effect, that changes function according to the game state
     ''' </summary>
@@ -201,10 +215,11 @@ Public Class Boggle
                 Return
         End Select
     End Sub
+
     ''' <summary>
     ''' Shake the board!
     ''' </summary>
-    Public Sub Shuffle()
+    Private Sub Shuffle()
         Dim rand As New Random ' Create 'random' object
         Dim allNumbers As New List(Of Integer)(Enumerable.Range(1, 16)) ' Create a list of integers from 1 to 16
         Dim selectedNumbers As New List(Of Integer) ' Create empty list of integers
@@ -226,9 +241,9 @@ Public Class Boggle
     ''' Keyboard listener
     ''' We're intercepting the keypress event BEFORE the new key is shown in the text box
     ''' </summary>
-    Public Sub UserInput(sender As Object, e As KeyPressEventArgs) Handles txtInput.KeyPress
+    Private Sub UserInput(sender As Object, e As KeyPressEventArgs) Handles txtInput.KeyPress
         If (txtInput.TextLength = 15 Or e.KeyChar = ChrW(Keys.Return)) Then ' Handle the 16th letter (if that happens), or the return key
-            HandleWord((txtInput.Text + e.KeyChar).ToLower()) ' Pass the lowercase transformation of the submitted word to the HandleWorld subroutine
+            HandleWord((txtInput.Text + e.KeyChar).ToLower().Trim()) ' Pass the lowercase transformation of the submitted word to the HandleWorld subroutine
             txtInput.Clear() ' Clear word input
             e.Handled = True ' Finish the event
         ElseIf Not (Char.IsLetter(e.KeyChar) Or e.KeyChar = ChrW(Keys.Back) Or e.KeyChar = ChrW(Keys.Delete)) Or e.KeyChar = "." Then ' Allow only letters to be typed in
@@ -242,7 +257,7 @@ Public Class Boggle
     ''' <summary>
     ''' Initialise application interface
     ''' </summary>
-    Public Sub AppLoad(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+    Private Sub AppLoad(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
         Try
             _lexicon = File.ReadAllLines("lexicon.txt") ' Read 'lexicon.txt' word list
         Catch
@@ -256,12 +271,14 @@ Public Class Boggle
         animation_initialise()
         animation.Start()
     End Sub
+
     ''' <summary>
     ''' Intercept application quit event
     ''' </summary>
     Private Sub AppQuit(sender As Object, e As FormClosingEventArgs) Handles MyBase.FormClosing
         maxScoreThread_flag = False ' Tell maximum score calculation thread to stop
     End Sub
+
     ''' <summary>
     ''' Utility function to universally change the game state
     ''' State 1 - waiting for new game
@@ -278,7 +295,7 @@ Public Class Boggle
     ''' </summary>
     ''' <param name="word">word</param>
     ''' <returns>Integer</returns>
-    Public Function CountWord(word)
+    Private Function CountWord(word)
         Select Case word.length
             Case Is > 7
                 Return 11
@@ -293,12 +310,13 @@ Public Class Boggle
         End Select
         Return False
     End Function
+
     ''' <summary>
     ''' Finds grid locations of input character
     ''' </summary>
     ''' <param name="ch">Character to find grid locations for</param>
     ''' <returns>List of labels (grid locations)</returns>
-    Public Function GetGridLocations(ch As Char)
+    Private Function GetGridLocations(ch As Char)
         Return (From die In pnlGameboard.Controls.Cast(Of Label)().ToList() Where die.Text.ToLower()(0) = ch).ToList()
     End Function
 
@@ -307,7 +325,7 @@ Public Class Boggle
     ''' </summary>
     ''' <param name="loc">Grid location</param>
     ''' <returns></returns>
-    Public Function GetSurroundingLocations(loc As Label)
+    Private Function GetSurroundingLocations(loc As Label)
         ' Hardcoded for a 4x4 grid
         Select Case loc.Name.Substring(3)
             Case "A1"
@@ -354,7 +372,7 @@ Public Class Boggle
     ''' <param name="word">List of sequential individual characters of a word</param>
     ''' <param name="previous">Previous grid location</param>
     ''' <param name="exclude">Grid locations to skip</param>
-    Public Function WordLoop(i As Integer, word As List(Of Char), previous As Label, exclude As List(Of Label))
+    Private Function WordLoop(i As Integer, word As List(Of Char), previous As Label, exclude As List(Of Label))
         exclude.Add(previous) ' Exclude previous grid location
         Dim oldlettersurroundings() As Label = GetSurroundingLocations(previous) ' Get grid locations surrounding the previous location
         Dim newletterlocations As List(Of Label) = GetGridLocations(word(i)) ' Find grid locations of the next letter
@@ -371,7 +389,7 @@ Public Class Boggle
         Next
 
         Return False ' Fail this path
-       
+
         ' Example 
         '
         ' B will search for surrounding Es (A3, C3)
@@ -393,12 +411,12 @@ Public Class Boggle
         ' 4  A B X X
         '
     End Function
-    Public Function ValidateWord(word As String)
+    Private Function ValidateWord(word As String)
         If word.Length < 3 Or word.Length > 16 Then Return False ' Make sure the word is 3 - 16 characters long
         word = word.Replace("qu", "q") ' Replace "qu" with "q" during the validation process
         Dim wordSplit As List(Of Char) = word.ToCharArray().ToList() ' Split the word into a list of characters
         If wordSplit.Any(Function(letter) GetGridLocations(letter).Count = 0) Then Return False ' Make sure all the letters are on the game board
-       
+
         ' Alternate WordLoop function for the first character
         Dim newletterlocations = GetGridLocations(word(0))
         For Each newletterlocation In newletterlocations
@@ -407,12 +425,12 @@ Public Class Boggle
         Return False
     End Function
 
-    Dim ReadOnly dingSound As SoundPlayer = New SoundPlayer(My.Resources.ding) ' 'Ding' noise for when the user enters a new valid word
+    ReadOnly dingSound As SoundPlayer = New SoundPlayer(My.Resources.ding) ' 'Ding' noise for when the user enters a new valid word
     ''' <summary>
     ''' Handle word received from word input
     ''' </summary>
     ''' <param name="word">lowercase word</param>
-    Public Sub HandleWord(word As String)
+    Private Sub HandleWord(word As String)
         If Not ValidateWord(word) Then
             Return ' Ignore words that do not appear on the game board
         End If
@@ -435,7 +453,7 @@ Public Class Boggle
         maxScoreThread_flag = True ' Allow thread to run
         Dim maxscore = 0
         For Each word In _lexicon
-            If ValidateWord(word) Then 
+            If ValidateWord(word) Then
                 maxscore += CountWord(word) ' For every word in the lexicon, if it is a valid word, add its word value
             End If
             If Not maxScoreThread_flag Then Return ' If flag is False, stop the function
@@ -444,13 +462,16 @@ Public Class Boggle
     End Sub
 
 #End Region
+
 #End Region
+
 #Region "Timers"
+
     ''' <summary>
     ''' Shuffle effect
     ''' Call from timer function
     ''' </summary>
-    Public Sub shuffleTimerTick() Handles shuffleTimer.Tick
+    Private Sub shuffleTimerTick() Handles shuffleTimer.Tick
         If shuffleTimer.Tag > DateTime.Now.Ticks Then
             Shuffle()
         Else
@@ -458,11 +479,12 @@ Public Class Boggle
             StartGame()
         End If
     End Sub
+
     ''' <summary>
     ''' Countdown timer
     ''' Call from timer function
     ''' </summary>
-    Public Sub GameTimerTick() Handles GameTimer.Tick
+    Private Sub GameTimerTick() Handles GameTimer.Tick
         GameTimer.Tag -= 1 ' Decrement time by one second
         lblTime.Text = "Time: " + GameTimer.Tag.ToString() ' Show remaining time
         TaskbarManager.Instance.SetProgressValue(GameTimer.Tag, GameTime) ' Update taskbar progress bar
@@ -472,6 +494,7 @@ Public Class Boggle
             ButtonEvent() ' Simulate a 'Give Up' button click
         End If
     End Sub
+
 #End Region
 End Class
 

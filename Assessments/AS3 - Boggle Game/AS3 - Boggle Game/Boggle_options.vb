@@ -28,8 +28,8 @@
         End Select
     End Function
     Private Sub OKButton_Click(sender As System.Object, e As System.EventArgs) Handles btnOK.Click
-        Boggle.GameTime = resolveTime()
-        Boggle.GameState = 3 ' Immitate game reset
+        Boggle.GameTime = ResolveTime()
+        Boggle.SetGameState(3)
         Boggle.ButtonEvent() ' Immitate game reset
         Me.Close()
     End Sub

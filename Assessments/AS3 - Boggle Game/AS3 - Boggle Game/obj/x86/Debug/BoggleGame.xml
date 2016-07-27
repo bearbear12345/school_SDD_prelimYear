@@ -133,6 +133,13 @@ abscissae
   Looks up a localized resource of type System.Byte[].
 </summary>
 </member>
+<member name="T:BoggleGame.Boggle">
+ <summary>
+ .NET Boggle Game by Andrew Wong (11SOF1)
+ Software Design Development Assessment Task 3 (2016)
+ http://github.com/bearbear12345/school_SDD_prelimYear
+ </summary>
+</member>
 <member name="F:BoggleGame.Boggle.GameState">
  <summary>
  Game states to change the function of the interface button
