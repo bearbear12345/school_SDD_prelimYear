@@ -10,8 +10,8 @@ Imports Microsoft.WindowsAPICodePack.Taskbar
 Public Class Boggle
 
 #Region "Settings"
-    Public GameTime As Integer = 180 ' Default game time (in seconds)
-    ReadOnly _dieFaces() As String = New String() { ' Collection of 16 dice faces
+    Public GameTime As Integer = 10 ' Default game time (in seconds)
+    ReadOnly _dieFaces() As String = New String() {
         "ACDEMP",
         "EGKLUY",
         "BFIORX",
@@ -28,7 +28,7 @@ Public Class Boggle
         "ABJMOQ",
         "AHMORS",
         "EGINTV"
-    }
+    } ' Collection of 16 dice faces
 #End Region
 
 
@@ -489,6 +489,7 @@ Public Class Boggle
         lblTime.Text = "Time: " + GameTimer.Tag.ToString() ' Show remaining time
         TaskbarManager.Instance.SetProgressValue(GameTimer.Tag, GameTime) ' Update taskbar progress bar
         TaskbarManager.Instance.SetProgressState(If(GameTimer.Tag / GameTime > 0.6, 2, If(GameTimer.Tag / GameTime > 0.3, 8, 4))) ' Change taskbar progress bar colour depending on remaining time. (0-30% - Red, 30-60% - Yellow, 60-100% - Green)
+        lblTime.ForeColor = If(GameTimer.Tag / GameTime <= 0.6, If(GameTimer.Tag / GameTime <= 0.3, Color.Red, Color.Orange), Color.Black) ' Change countdown colour
         If GameTimer.Tag = 0 Then ' When timer reaches 0
             SetGameState(2) ' Set game state to finished
             ButtonEvent() ' Simulate a 'Give Up' button click

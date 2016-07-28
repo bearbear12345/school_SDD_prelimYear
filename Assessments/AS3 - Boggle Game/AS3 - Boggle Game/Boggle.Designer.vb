@@ -265,7 +265,7 @@ Partial Class Boggle
         '
         'lblTime
         '
-        Me.lblTime.Location = New System.Drawing.Point(9, 230)
+        Me.lblTime.Location = New System.Drawing.Point(9, 231)
         Me.lblTime.Name = "lblTime"
         Me.lblTime.Size = New System.Drawing.Size(75, 17)
         Me.lblTime.TabIndex = 19
@@ -275,13 +275,13 @@ Partial Class Boggle
         '
         Me.txtInput.BackColor = System.Drawing.Color.LightGray
         Me.txtInput.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.txtInput.Enabled = false
-        Me.txtInput.Font = New System.Drawing.Font("Arial Narrow", 25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0,Byte))
+        Me.txtInput.Enabled = False
+        Me.txtInput.Font = New System.Drawing.Font("Arial Narrow", 25.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtInput.Location = New System.Drawing.Point(12, 249)
         Me.txtInput.MaxLength = 16
-        Me.txtInput.Multiline = true
+        Me.txtInput.Multiline = True
         Me.txtInput.Name = "txtInput"
-        Me.txtInput.ShortcutsEnabled = false
+        Me.txtInput.ShortcutsEnabled = False
         Me.txtInput.Size = New System.Drawing.Size(200, 43)
         Me.txtInput.TabIndex = 1
         '
@@ -289,16 +289,16 @@ Partial Class Boggle
         '
         Me.userList.Columns.AddRange(New System.Windows.Forms.ColumnHeader() {Me.listWord})
         Me.userList.HeaderStyle = System.Windows.Forms.ColumnHeaderStyle.Nonclickable
-        Me.userList.LabelWrap = false
+        Me.userList.LabelWrap = False
         Me.userList.Location = New System.Drawing.Point(234, 28)
-        Me.userList.MultiSelect = false
+        Me.userList.MultiSelect = False
         Me.userList.Name = "userList"
-        Me.userList.ShowGroups = false
+        Me.userList.ShowGroups = False
         Me.userList.Size = New System.Drawing.Size(110, 332)
         Me.userList.Sorting = System.Windows.Forms.SortOrder.Ascending
         Me.userList.TabIndex = 21
-        Me.userList.TabStop = false
-        Me.userList.UseCompatibleStateImageBehavior = false
+        Me.userList.TabStop = False
+        Me.userList.UseCompatibleStateImageBehavior = False
         Me.userList.View = System.Windows.Forms.View.Details
         '
         'listWord
@@ -312,7 +312,7 @@ Partial Class Boggle
         '
         'menuStrip
         '
-        Me.menuStrip.CanOverflow = false
+        Me.menuStrip.CanOverflow = False
         Me.menuStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden
         Me.menuStrip.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuGame, Me.menuHelp, Me.txtMaxScore})
         Me.menuStrip.Location = New System.Drawing.Point(0, 0)
@@ -324,7 +324,7 @@ Partial Class Boggle
         '
         Me.menuGame.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.menuGame.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.menuGame_options, Me.menuGame_exit})
-        Me.menuGame.Image = CType(resources.GetObject("menuGame.Image"),System.Drawing.Image)
+        Me.menuGame.Image = CType(resources.GetObject("menuGame.Image"), System.Drawing.Image)
         Me.menuGame.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.menuGame.Name = "menuGame"
         Me.menuGame.Size = New System.Drawing.Size(51, 22)
@@ -333,13 +333,13 @@ Partial Class Boggle
         'menuGame_options
         '
         Me.menuGame_options.Name = "menuGame_options"
-        Me.menuGame_options.Size = New System.Drawing.Size(152, 22)
+        Me.menuGame_options.Size = New System.Drawing.Size(116, 22)
         Me.menuGame_options.Text = "Options"
         '
         'menuGame_exit
         '
         Me.menuGame_exit.Name = "menuGame_exit"
-        Me.menuGame_exit.Size = New System.Drawing.Size(152, 22)
+        Me.menuGame_exit.Size = New System.Drawing.Size(116, 22)
         Me.menuGame_exit.Text = "Exit"
         '
         'menuHelp

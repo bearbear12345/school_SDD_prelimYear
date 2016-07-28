@@ -1,13 +1,3 @@
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\AS3 - Boggle Game.exe
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\AS3 - Boggle Game.pdb
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\AS3 - Boggle Game.xml
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbprojResolveAssemblyReference.cache
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.appMain.resources
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Resources.resources
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbproj.GenerateResource.Cache
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.exe
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.xml
-E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.pdb
 F:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.exe
 F:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.xml
 F:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.pdb
@@ -28,3 +18,15 @@ G:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Ga
 G:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.appMain.resources
 G:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Resources.resources
 G:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbproj.GenerateResource.Cache
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.exe
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.pdb
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\bin\Debug\BoggleGame.xml
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbprojResolveAssemblyReference.cache
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Boggle.resources
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Boggle_about.resources
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Resources.resources
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.Boggle_options.resources
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\AS3 - Boggle Game.vbproj.GenerateResource.Cache
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.exe
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.xml
+E:\Projects\School SDD 2016 Prelim\Assessments\AS3 - Boggle Game\AS3 - Boggle Game\obj\x86\Debug\BoggleGame.pdb
