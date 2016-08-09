@@ -1,8 +1,6 @@
-# not working right now
 key = input("Key: ")
 message = input("Message: ")
 import re
-#message_strip = re.sub(r'[^A-Z|a-z]', '', message)
 message_strip = re.sub(r'[^a-zA-Z]+', '', message)
 if len(message.strip()) != 0:
   # Key Order
@@ -11,7 +9,6 @@ if len(message.strip()) != 0:
   for i in range(len(key)):
     keyg.append((key[i],i))
   keygs = sorted(keyg,key=tuplesort)
-
   # Populate matrix
   matrix = [["" for _ in range(len(key))]]
   matrix_position = (0,0)
@@ -25,6 +22,7 @@ if len(message.strip()) != 0:
 
   # pad matrix
   for i in range(len(key)-matrix_position[0]):
+    while i>25: i -= 26
     matrix[matrix_position[1]][matrix_position[0]] = chr(97+i)
     matrix_position = (matrix_position[0] + 1, matrix_position[1])
 
