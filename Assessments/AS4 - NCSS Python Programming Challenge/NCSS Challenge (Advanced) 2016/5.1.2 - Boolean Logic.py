@@ -5,7 +5,7 @@ class AndNode(Node):
     self._children = [node1, node2]
     pass
   def evaluate(self, variables):
-    return False not in [self._children[0].evaluate(variables), self._children[1].evaluate(variables)]
+    return self._children[0].evaluate(variables) and self._children[1].evaluate(variables)
   def get_children(self):
     return self._children
   def get_description(self):
@@ -16,7 +16,7 @@ class OrNode(Node):
     self._children = [node1, node2]
     pass
   def evaluate(self, variables):
-    return any([self._children[0].evaluate(variables),self._children[1].evaluate(variables)])
+    return self._children[0].evaluate(variables) or self._children[1].evaluate(variables)
   def get_children(self):
     return self._children
   def get_description(self):
